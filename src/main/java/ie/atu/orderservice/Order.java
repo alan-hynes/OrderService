@@ -3,6 +3,7 @@ package ie.atu.orderservice;
 import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.Positive;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,5 +21,8 @@ public class Order {
 
     @Min(value = 0, message = "Total price cannot be negative")
     private double totalPrice;
+
+    @Positive(message = "Product ID must be greater than 0")
+    private Long productID;
 
 }
