@@ -1,6 +1,5 @@
 package ie.atu.orderservice;
 
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,7 +22,7 @@ public class OrderController {
     }
 
     @PostMapping
-    public Order placeOrder(@Valid @RequestBody Order order) {
+    public Order placeOrder(@RequestBody Order order) {
         return orderService.placeOrder(order);
     }
 }
